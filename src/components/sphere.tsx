@@ -18,10 +18,7 @@ function Sphere() {
 
     setSize(Math.random() * 20);
 
-    const colors = [
-      "bg-orange-300",
-      "bg-orange-400",
-    ];
+    const colors = ["bg-orange-300", "bg-orange-400"];
     setColor(colors[Math.floor(Math.random() * colors.length)]);
 
     const startEndPos = getRandomCoords();
@@ -39,9 +36,10 @@ function Sphere() {
       let keyframes: Keyframe[] = [];
       positions.forEach((position, i) => {
         let keyframe = {
-          top: `${(position[1])}%`,
-          left: `${(position[0])}%`,
+          top: `${position[1]}%`,
+          left: `${position[0]}%`,
           easing: "cubic-bezier(0.5, 0.1, 0.1, 0.5)",
+          transform: `scale(${(1.5 - Math.random())})`,
         };
         keyframes.push(keyframe);
       });
